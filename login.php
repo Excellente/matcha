@@ -18,7 +18,7 @@
       <div id="show" class='signup'>
           <h1 id="form-title">login</h1>
          <form name="user_login" onsubmit="return formValidate()" action="" method="post">
-           <input type='text' required name="email" placeholder='Email Address:'/>
+           <input type='text' name="email" placeholder='Email Address:'/>
            <input type='password' required name="passwd" placeholder='Password:'/>
            <input type='submit' name="submit" value="login" placeholder='login'/>
          </form>
@@ -27,8 +27,8 @@
           <a href="register.php"><span>Don't have an account? Register</span></a>
          </div>
     </div>
-    <footer><span style="color: rgba(0, 0, 0, 0.5)">website by:</span> <a      href="https://twitter.com/TheeRapDean">@TheeRapDean</a>
-      <br>Copyright (c) 2016 emsimang All Rights Reserved.
+    <footer><span style="color: rgba(0, 0, 0, 0.5)">website by:</span> <a href="https://twitter.com/TheeRapDean">@TheeRapDean</a>
+      <br><p>Copyright (c) 2016 emsimang All Rights Reserved.</p>
     </footer>
     <script type="text/javascript" src="javascript/script.js">
     </script>
@@ -46,8 +46,15 @@ if(isset($_POST['submit']))
 {
   try
 	{
-		$email = $_POST['email'];
-		$passw = $_POST['passwd'];//hash('whirlpool', $_POST['passwd']);
+    $email = $_POST['email'];
+    $passw = $_POST['passwd'];//hash('whirlpool', $_POST['passwd']);
+    if (filter_var($email, FILTER_VALIDATE_EMAIL) === false)
+    {
+      $start->__setReport("email is not valid");
+      print $start->__getReport();
+      header("refresh : 3; login.php");
+      return;
+    }
     $conn = $start->server_connect();
     $sql = $conn->prepare("SELECT active, username, password, email FROM users
 					 WHERE email = :email AND password = :passwd");

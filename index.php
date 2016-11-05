@@ -1,14 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1 style="font-size: 3.9em; text-align: center">Page under construction</h1>
+  </body>
+</html>
+
 <?php
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
 
-require 'vendor/autoload.php';
-
-$app = new \Slim\App;
-$app->get('/hello/{name}', function (Request $request, Response $response) {
-    $name = $request->getAttribute('name');
-    $response->getBody()->write("Hello, $name");
-
-    return $response;
-});
-$app->run();
+?>

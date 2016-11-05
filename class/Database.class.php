@@ -89,6 +89,7 @@ class Database
 	        `email` VARCHAR(80) NOT NULL,
 	        `password` VARCHAR(255) NOT NULL,
           `gender` VARCHAR(25),
+          `interests` VARCHAR(255),
           `sex-preference` VARCHAR(80),
           `biography` TEXT)";
     try

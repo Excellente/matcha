@@ -6,7 +6,7 @@
   </head>
   <body background="valentine-girl.jpg">
     <header>
-      <span><a style="color:rgba(255,23,68 ,.9)" href="#">Vicini</a></span> Love
+      <span><a style="color:rgba(255,23,68 ,.9)" href="index.php">Vicini</a></span> Love
     </header>
     <div id='container'>
       <div id="hide" class="btn-container">
@@ -33,7 +33,7 @@
       </div>
     </div>
     <footer><span style="color: rgba(0, 0, 0, 0.5)">website by:</span> <a href="https://twitter.com/TheeRapDean">@TheeRapDean</a>
-      <br>Copyright (c) 2016 emsimang All Rights Reserved.
+      <br><p>Copyright (c) 2016 emsimang All Rights Reserved.</p>
     </footer>
     <script type="text/javascript" src="javascript/script.js">
     </script>
