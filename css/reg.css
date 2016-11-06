@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 body {
-  /*background-color: #1abc9c;
-  background            :rgba(39, 9, 66, 0.8) url(love-flowers.jpg)center center;*/
   margin: 0;
   padding: 0;
   background-repeat     : no-repeat;
@@ -11,13 +9,11 @@ body {
 }
 #container {
   width: 840px;
-  height: 90%;
+  height: 100%;
   margin: 25px auto;
 }
 #form-title {
-  opacity: 0.1;
-  transition: opacity 4s;
-  -webkit-transition: opacity 4s;
+  opacity: 1;
   border-radius: 2px 8px 10px;
   border-top: 1px solid rgba(0,0,0,.2);
   border-bottom: 1px solid rgba(0,0,0,.2);
@@ -26,19 +22,7 @@ body {
   border-top: 1px solid rgba(83, 218, 206, .2);
   border-bottom: 1px solid rgba(83, 218, 206, .2);
 }
-/*login buttons with display: none;*/
-#login {
-  float: left;
-  margin-top: 25px;
-  width: 20%;
-  border: 0;
-  background-color: #53DACE;
-  border-radius: 5px;
-  height: 50px;
-  color: white;
-  font-weight: 400;
-  font-size: 1em;
-}
+
 #bottom-links {
   margin-top: 1%;
 }
@@ -49,31 +33,19 @@ body {
   margin-left: 20px;
   padding-right: 20px;
 }
-.btn-container {
-  display: none;
-  float: left;
-}
-.btn {
-  margin-top: 0;
-  margin-left: 2%;
-  display: inline-block
-}
+
 .signup {
   float: left;
   width: 50%;
-  transition: width .4s;
-  -webkit-transition: width .4s;
-  transition: height .4s;
-  -webkit-transition: height .4s;
+  opacity: .9;
+  transition: opacity 7s;
+  -moz-transition: opacity 7s;
+  -webkit-transition: opacity 7s;
   margin-top: 3.9%;
   padding: 30px 20px;
   background-color: white;
   text-align: center;
   border-radius: 5px 0 0 5px;
-}
-
-.signup:hover {
-  width: 50%;
 }
 
 [type=text] {
@@ -123,6 +95,7 @@ body {
   outline: none;
   border-color: #53CACE;
 }
+
 header span {
   font-family: 'Lobster', cursive;
 }
@@ -160,24 +133,23 @@ span {
 span:hover {
   color: #53CACE;
 }
-p:nth-of-type(2) {
-  font-size: 1em;
-}
+
 
 footer p {
   color: white;
   font-size: .9em;
+  padding: 0;
 }
 
 footer {
   font-weight: lighter;
   position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  width: 100%;
+  height: 10%;
   color: white;
   padding: 1%;
+  position: fixed;
+  bottom: 0;
   text-align: center;
-  clear: both;
   background-color: black;
 }

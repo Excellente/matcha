@@ -4,18 +4,14 @@
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/reg.css">
   </head>
-  <body background="valentine-girl.jpg">
+  <body background="./images/valentine-girl.jpg">
     <header>
       <span><a style="color:rgba(255,23,68 ,.9)" href="index.php">Vicini</a></span> Love
     </header>
     <div id='container'>
-      <div id="hide" class="btn-container">
-        <button type="button" class="btn" id="login" name="login">login</button>
-        <button type="button" class="btn" id="signup" name="signup">signup</button>
-     </div>
       <div id="show" class='signup'>
           <h1 id="form-title">Register</h1>
-         <form name="user_reg" onsubmit="return formValidate()" action="create_acc.php" method="post">
+         <form name="user_reg" action="create_acc.php" method="post">
            <input type='text' required name="fname" placeholder='First Name:'/>
            <input type='text' required name="lname" placeholder='Last Name:'/>
            <input type='text' required name="email" placeholder='Email Address:'/>
@@ -29,7 +25,7 @@
          </div>
       </div>
       <div class='app-title'>
-        <h1><span style="color:rgba(255,23,68 ,.9)">Vicini</span> Love</h1>
+        <h1><span style="color:rgba(255,23,68 ,.9)">Vicini</span>Love</h1>
       </div>
     </div>
     <footer><span style="color: rgba(0, 0, 0, 0.5)">website by:</span> <a href="https://twitter.com/TheeRapDean">@TheeRapDean</a>

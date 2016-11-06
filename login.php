@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
   </head>
-  <body background="love-sand.jpg">
+  <body background="./images/love-sand.jpg">
     <header>
       <span><a style="color:rgba(255,23,68 ,.9)" href="#">Vicini</a></span> Love
     </header>
@@ -30,7 +30,7 @@
     <footer><span style="color: rgba(0, 0, 0, 0.5)">website by:</span> <a href="https://twitter.com/TheeRapDean">@TheeRapDean</a>
       <br><p>Copyright (c) 2016 emsimang All Rights Reserved.</p>
     </footer>
-    <script type="text/javascript" src="javascript/script.js">
+    <script type="text/javascript" src="javascript/login.js">
     </script>
   </body>
 </html>
@@ -46,27 +46,35 @@ if(isset($_POST['submit']))
 {
   try
 	{
-    $email = $_POST['email'];
-    $passw = $_POST['passwd'];//hash('whirlpool', $_POST['passwd']);
+    $email = htmlspecialchars(trim($_POST['email']));
+    $passw = htmlspecialchars(trim($_POST['passwd']));
     if (filter_var($email, FILTER_VALIDATE_EMAIL) === false)
     {
-      $start->__setReport("email is not valid");
+      $start->__setReport("valid email");
       print $start->__getReport();
       header("refresh : 3; login.php");
       return;
     }
     $conn = $start->server_connect();
     $sql = $conn->prepare("SELECT active, username, password, email FROM users
-					 WHERE email = :email AND password = :passwd");
+                           WHERE email = :email");
 		$sql->bindParam(":email", $email);
-		$sql->bindParam(":passwd", $passw);
     $sql->execute();
 		$res = $sql->fetch();
 		if ($sql->rowCount() > 0 && $res['active'] == 0)
 		{
 			header("Location: notverified.php");
 		}
-    if($sql->rowCount() > 0 && $res['active'] == 1) {
+    if (!password_verify($passw, $res['password']))
+    {
+      $start->__setReport("incorrect password");
+      print $start->__getReport();
+      header("refresh : 3; login.php");
+      return;
+    }
+    if($sql->rowCount() > 0 && $res['active'] == 1)
+    {
+      $uname = $res['username'];
 			$_SESSION['username'] = $uname;
 			header("Location: index.php");
 		}
