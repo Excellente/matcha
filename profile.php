@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>update profile</title>
-    <link rel="stylesheet" href="css/header.css" media="screen">
-    <link rel="stylesheet" href="css/profile.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/header.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/error.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/profile.css" media="screen">
   </head>
   <body>
     <header>
@@ -16,7 +17,8 @@
     </header>
     <div id="wrapper">
       <div class="side-content">
-        <ul>
+        <label style="padding-left: 30%" for="settings">Settings</label>
+        <ul id="settings">
           <li><a id="inter">interests</a></li>
           <li><a id="sex">sexual-preference</a></li>
           <li><a id="bio">biography</a></li>
@@ -28,7 +30,15 @@
       </div>
       <div class="edit-options">
 
-        <div id="interests">edit 1</div>
+        <div id="interests">
+          <form name="user_reg" id="interests-data" action="handler/edit_profile.php" method="post">
+            <label for="txt-area">Tag your interests</label>
+            <br><small style="color: rgba(0,0,0, .5); font-family: 'Roboto', sans-serif">tagging interests will help people find you easily</small>
+            <br><small style="color: rgba(0,0,0, .5); font-family: 'Roboto', sans-serif">available tags: #geek #vegan #short #tall #suprise</small>
+            <textarea id="txt-area" name="bio-data" form="bio-form" placeholder="#example #sexy ..."></textarea>
+            <input type='submit' name="submit" value="Save"/>
+          </form>
+        </div>
         <div id="sexual">
           <div id="orientation">
             <label for="gender-options">I Am</label>

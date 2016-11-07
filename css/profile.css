@@ -37,12 +37,12 @@ header span {
   font-family: 'Lobster', cursive;
 }
 ul {
-  margin-left: -1.9em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-before: 0em;
+  padding: .9%;
   list-style: none;
 }
-ul:before {
-  margin: 0;
-}
+
 .side-content {
   float: left;
   width: 15%;
@@ -86,8 +86,16 @@ ul:before {
 
 #interests {
   display: none;
+  float: left;
+  width: 40%;
+  text-align: center;
+  margin-left: 17%;
+  padding: 30px 20px;
+  background-color: white;
+  text-align: center;
+  border-radius: 5px 0 0 5px;
 }
-#biography {
+  #biography {
   display: none;
   float: left;
   width: 40%;
