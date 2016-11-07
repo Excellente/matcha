@@ -15,8 +15,7 @@ if (isset($_SESSION['username']) && !empty($_SESSION['username']))
         $gen = htmlspecialchars($_POST['orientation']);
         $pref = htmlspecialchars($_POST['preference']);
         print $gen ."<br>". $pref;
-        return;
-        $sql   = $conn->prepare("UPDATE users SET gender = ':gen', `sex-preference` = ':pref' WHERE username = ':uname'");
+        $sql   = $conn->prepare("UPDATE users SET gender = :gen, `sex-preference` = :pref WHERE username = :uname");
         $sql->bindParam(":gen", $gen);
         $sql->bindParam(":pref", $pref);
         $sql->bindParam(":uname", $uname);

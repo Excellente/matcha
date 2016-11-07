@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Lato');
-body {
+body, html {
+
   margin: 0;
   padding: 0;
 }
@@ -36,8 +37,11 @@ header span {
   font-family: 'Lobster', cursive;
 }
 ul {
-  margin: 0;
+  margin-left: -1.9em;
   list-style: none;
+}
+ul:before {
+  margin: 0;
 }
 .side-content {
   float: left;
@@ -60,6 +64,11 @@ ul {
   color: white;
   background-color: #53CADF;
 }
+
+.side-content > ul > li a {
+  padding-left: 10%;
+}
+
 .edit-options {
   width: 85%;
   height: 100%;
@@ -90,8 +99,8 @@ ul {
   border-radius: 5px 0 0 5px;
 }
 #sexual {
+  display: none;
   margin-left: 200px;
-  display: inline;
   float: left;
   width: 40%;
   margin-left: 17%;
@@ -103,6 +112,8 @@ ul {
 #wrapper {
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
 }
 
@@ -110,11 +121,23 @@ ul {
   border-radius: 25px;
 }
 
+#user {
+  width: 10%;
+  float: right;
+  display: inline-block;
+}
 #user-pic {
   margin: 0;
-  float: right;
-  position:sticky;
-  display: inline-block;
+  float: left;
+}
+
+#user-name {
+  margin: 0;
+  color: rgba(0,0,0, .7);
+  margin-right: 10%;
+  margin-top: 4%;
+  float: left;
+  font-size: .7em;
 }
 
 #heading > h1 {
@@ -206,10 +229,12 @@ p {
   font-size: 1.2em;
   margin: 50px 0 50px 0;
 }
+
 a {
   cursor: pointer;
   text-decoration: none;
 }
+
 footer a {
   font-family: 'Ubuntu', sans-serif;
   cursor: pointer;
@@ -220,9 +245,9 @@ span {
   font-size: .75em;
   background-color: white;
   padding: 2px 5px;
-  color: rgba(255,255,255,.6);
   border-radius: 2px;
   box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  color: rgba(255,255,255,.6);
   margin: 5px;
 }
 span:hover {

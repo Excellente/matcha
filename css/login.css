@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 body {
-  /*background-color: #1abc9c;
-  background            :rgba(39, 9, 66, 0.8) url(love-flowers.jpg)center center;*/
   margin: 0;
   padding: 0;
   background-repeat     : no-repeat;
@@ -26,30 +24,12 @@ body {
   border-top: 1px solid rgba(83, 218, 206, .2);
   border-bottom: 1px solid rgba(83, 218, 206, .2);
 }
-#login {
-  margin-top: 25px;
-  width: 20%;
-  border: 0;
-  background-color: #53DACE;
-  border-radius: 5px;
-  height: 50px;
-  color: white;
-  font-weight: 400;
-  font-size: 1em;
-}
+
 #bottom-links {
   margin-top: 0.5%;
   display: inline-block;
 }
-.btn-container {
-  display: none;
-  float: left;
-}
-.btn {
-  margin-top: 0;
-  margin-left: 2%;
-  display: inline-block
-}
+
 .signup {
   width: 50%;
   margin-left: auto;
@@ -127,11 +107,6 @@ a {
   cursor: pointer;
   text-decoration: none;
 }
-footer a {
-  cursor: pointer;
-  color: #53CACE;
-  text-decoration: none;
-}
 span {
   font-size: .75em;
   background-color: white;
@@ -147,13 +122,40 @@ span:hover {
 p:nth-of-type(2) {
   font-size: 1em;
 }
+
+#error {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.7em;
+  padding-top: 12%;  
+  z-index: 800000;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, .7);
+  -webkit-transition: color 2s;
+}
+
+#error:hover {
+  /*color: rgba(255,23,68 ,.5);*/
+  color: rgba(205,230,168 ,.5);
+}
+
+footer a {
+  cursor: pointer;
+  color: #53CACE;
+  text-decoration: none;
+}
 footer p {
   color: white;
   font-size: .9em;
 }
 footer {
   font-weight: lighter;
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;

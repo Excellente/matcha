@@ -9,8 +9,9 @@
   <body>
     <header>
       <span><a style="color:rgba(255,23,68 ,.9)" href="index.php">Vicini</a></span>
-      <div id="user-pic">
-        <img id="profile" width="35" height="35" src="avatar/avatar.jpg" alt="profile-pic">
+      <div id="user">
+        <div id="user-name">John Doe</div>
+        <div id="user-pic"><img id="profile" width="35" height="35" src="avatar/avatar.jpg" alt="profile-pic"></div>
       </div>
     </header>
     <div id="wrapper">
@@ -19,6 +20,7 @@
           <li><a id="inter">interests</a></li>
           <li><a id="sex">sexual-preference</a></li>
           <li><a id="bio">biography</a></li>
+          <li><a id="acc">my account</a></li>
         </ul>
       </div>
       <div id="heading" style="text-align: center; width: 80%;">
@@ -55,7 +57,7 @@
            <form name="user_reg" id="bio-form" action="handler/edit_profile.php" method="post">
              <label for="txt-area">Add your Biography</label>
              <br><small style="color: rgba(0,0,0, .5); font-family: 'Roboto', sans-serif">users with a bio are likely to find a patner</small>
-             <textarea id="txt-area" name="bio-data" form="bio-form" placeholder="please briefly describe yourself"></textarea>
+             <textarea id="txt-area" name="bio-data" form="bio-form" placeholder="from the horses mouth"></textarea>
              <input type='submit' name="submit" value="Save"/>
            </form>
 
