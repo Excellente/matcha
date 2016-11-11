@@ -15,7 +15,7 @@
 
       <div id="show" class='signup'>
           <h1 id="form-title">login</h1>
-         <form name="user_login" onsubmit="return formValidate()" action="" method="post">
+         <form name="user_login" action="" method="post">
            <input type='text' name="uname" placeholder='username:'/>
            <input type='password' required name="passwd" placeholder='Password:'/>
            <input type='submit' name="submit" value="login" placeholder='login'/>
@@ -34,9 +34,10 @@
   </body>
 </html>
 
+
 <?php
 session_start();
-require_once "db_object.php";
+require_once "./db_object.php";
 
 if (!empty($_SESSION['username'])) {
 	header("Location: index.php");
@@ -48,8 +49,7 @@ if(isset($_POST['submit']))
     $uname = htmlspecialchars(trim($_POST['uname']));
     $passw = htmlspecialchars(trim($_POST['passwd']));
     $conn = $start->server_connect();
-    $sql = $conn->prepare("SELECT active, username, password, email FROM users
-                           WHERE username = :uname");
+    $sql = $conn->prepare("SELECT * FROM users WHERE username = :uname");
     $sql->bindParam(":uname", $uname);
     $sql->execute();
     $res = $sql->fetch();
@@ -67,8 +67,13 @@ if(isset($_POST['submit']))
         print "<div id='error' onclick='disappear()'>".$start->__getReport()."</div>";
         return;
       }
-      $uname = $res['username'];
-			$_SESSION['username'] = $uname;
+      $_SESSION['logged-out'] = false;
+			$_SESSION['username'] = $res['username'];
+      $_SESSION['firstname'] = $res['firstname'];
+      $_SESSION['lastname'] = $res['lastname'];
+      $_SESSION['email'] = $res['email'];
+      $_SESSION['gender'] = $res['gender'];
+      $_SESSION['user_id'] = $res['id'];
 			header("Location: index.php");
 		}
     elseif (count($res) > 1 && (password_verify($passw, $res['password']) == false)) {
