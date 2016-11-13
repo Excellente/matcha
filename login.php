@@ -67,6 +67,7 @@ if(isset($_POST['submit']))
         print "<div id='error' onclick='disappear()'>".$start->__getReport()."</div>";
         return;
       }
+      $conn->query("UPDATE users SET online = 1 WHERE username = '".$uname."'");
       $_SESSION['logged-out'] = false;
 			$_SESSION['username'] = $res['username'];
       $_SESSION['firstname'] = $res['firstname'];
@@ -74,7 +75,7 @@ if(isset($_POST['submit']))
       $_SESSION['email'] = $res['email'];
       $_SESSION['gender'] = $res['gender'];
       $_SESSION['user_id'] = $res['id'];
-			header("Location: index.php");
+			header("Location: other_profiles.php");
 		}
     elseif (count($res) > 1 && (password_verify($passw, $res['password']) == false)) {
         $start->__setReport("incorrect password");
